@@ -5,9 +5,14 @@ using UnityEngine;
 public class Stealable : Interactable {
     public float price;
 
+
     public override void Interacting()
     {
-        moneyManager.moneyOnPerson += price;
-        GameObject.Destroy(gameObject);
+        if (moneyManager.inInventory < moneyManager.maxInInventory)
+        {
+            moneyManager.moneyOnPerson += price;
+            GameObject.Destroy(gameObject);
+            moneyManager.inInventory++;
+        }
     }
 }
