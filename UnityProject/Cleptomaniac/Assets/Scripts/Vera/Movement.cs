@@ -16,6 +16,13 @@ public class Movement : MonoBehaviour
     public Rigidbody player;
     public float jumpHight;
     public bool jumped;
+    public float walkSpd;
+    public float runSpd;
+    public float endurance;
+    public float enduranceLenght;
+    public float enduranceDepletion;
+    public bool outOfBreath;
+    public float backInBreath; 
 
     void Update()
     {
@@ -27,6 +34,31 @@ public class Movement : MonoBehaviour
 
     public void MovementChar()
     {
+        if (Input.GetButton("Fire3") && endurance > 0 && outOfBreath == false)
+        {
+            movSpeed = runSpd;
+            if(movVert != 0 || movHor != 0)
+            {
+                endurance -= enduranceDepletion;
+            }
+        }
+        else
+        {
+            movSpeed = walkSpd;
+            if (endurance < enduranceLenght)
+            {
+                endurance += enduranceDepletion;
+            }
+        }
+        if(endurance == 0)
+        {
+            outOfBreath = true;
+        }
+        if(endurance >= backInBreath)
+        {
+            outOfBreath = false;
+        }
+
         horizontal = Input.GetAxis("Mouse X") * mouseSen * Time.deltaTime;
         vertical = Input.GetAxis("Mouse Y") * mouseSen * Time.deltaTime;
         movVert = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
