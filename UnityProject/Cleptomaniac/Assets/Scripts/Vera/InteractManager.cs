@@ -13,10 +13,12 @@ public class InteractManager : MonoBehaviour {
     public string eText;
     public string invFull;
     public bool test;
+    public Image value;
 
     void Start()
     {
         e.text = eText;
+        value.enabled = false;
     }
     void Update () {
         
@@ -24,6 +26,12 @@ public class InteractManager : MonoBehaviour {
         {
             interactable = targetHit.collider.GetComponent<Interactable>();
             test = true;
+            if(targetHit.collider.GetComponent<Stealable>() != null)
+            {
+                value.enabled = true;
+                value.fillAmount = interactable.value / 3;                
+            }
+            
             if (interactable.interacting == false)
             {
                 e.enabled = true;
@@ -43,11 +51,13 @@ public class InteractManager : MonoBehaviour {
             {
                  e.enabled = true;
                  e.text = invFull;
-                
-                 //StartCoroutine(FullInventory());
             }
         }
-      if( test == false)
+        else
+        {
+            value.enabled = false;
+        }
+        if ( test == false)
         {
             e.enabled = false;
             inventoryFull = false;
@@ -56,12 +66,4 @@ public class InteractManager : MonoBehaviour {
 
         test = false;
 	}
-
-  /*  public IEnumerator FullInventory()
-    {
-        yield return new WaitForSeconds(2);
-        inventoryFull = false;
-        e.text = eText;
-    }
-*/
 }

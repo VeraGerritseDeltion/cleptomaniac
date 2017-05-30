@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stealable : Interactable {
     public float price;
+   
 
 
     public override void Interacting()

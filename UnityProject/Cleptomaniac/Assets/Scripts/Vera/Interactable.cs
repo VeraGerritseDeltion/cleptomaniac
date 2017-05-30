@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Interactable : MonoBehaviour {
     public bool interacting;
     public MoneyManager moneyManager;
+    public float value;
 
 	public virtual void Interacting()
     {
-        print("inter");
     }
 }
