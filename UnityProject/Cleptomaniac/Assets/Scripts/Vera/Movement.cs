@@ -22,18 +22,21 @@ public class Movement : MonoBehaviour
     public float enduranceLenght;
     public float enduranceDepletion;
     public bool outOfBreath;
-    public float backInBreath; 
+    public float backInBreath;
+    public bool movementStuck;
 
     void Update()
     {
-        MovementChar();
-        if (jumped == false){
-            Jump();
-        }
+        if(movementStuck == false)
+        {
+            MovementChar();
+        }    
     }
 
     public void MovementChar()
-    {
+    {   if (jumped == false){
+            Jump();
+        }
         if (Input.GetButton("Fire3") && endurance > 0 && outOfBreath == false)
         {
             movSpeed = runSpd;
