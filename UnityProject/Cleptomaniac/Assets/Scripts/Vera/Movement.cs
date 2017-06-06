@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     public float enduranceDepletion;
     public bool outOfBreath;
     public float backInBreath;
-    public bool movementStuck;
+    public static bool movementStuck;
 
     void Update()
     {

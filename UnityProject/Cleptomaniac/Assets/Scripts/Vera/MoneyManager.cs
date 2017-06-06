@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MoneyManager : MonoBehaviour {
+[System.Serializable]
+public class MoneyManager {
     public float moneyOnPerson;
-    public float moneyOnBank;
-    public int maxInInventory;
+    public static float moneyOnBank;
+    public int maxInInventory = 1;
     public int inInventory;
 
+
+    void Update()
+    {
+        moneyOnPerson++;
+    }
 }

@@ -10,7 +10,6 @@ public class OpenVault : Interactable {
     public Canvas padLock;
     public int codeInput;
     public bool doorOpend;
-    public Movement movement;
 
 
     void Start()
@@ -25,16 +24,18 @@ public class OpenVault : Interactable {
             if (doorOpend == false)
             {
                 padLock.enabled = false;
-                movement.movementStuck = false;
+                Movement.movementStuck = false;
                 interacting = false;
+                MenuManager.inGameStaticInterface = false;
             }
         }
     }
     public override void Interacting()
     {
         padLock.enabled = true;
-        movement.movementStuck = true;
+        Movement.movementStuck = true;
         interacting = true;
+        MenuManager.inGameStaticInterface = true;
     }
 
     public void CodeCheck()
@@ -43,8 +44,9 @@ public class OpenVault : Interactable {
         {
             vault.SetBool("OpenDoor", true);
             padLock.enabled = false;
-            movement.movementStuck = false;
+            Movement.movementStuck = false;
             doorOpend = true;
+            MenuManager.inGameStaticInterface = false;
         }
         else
         {
