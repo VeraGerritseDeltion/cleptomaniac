@@ -5,12 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class SaveClass {
     
-    public List<MoneyManager> moneyManager = new List<MoneyManager>();
-    //public MoneyManager moneymanager;
+
+    public MoneyManager moneymanager;
     public int test;
 	public void Start () {
-            moneyManager.Add(new MoneyManager()); 
-	}
+        if(moneymanager == null)
+        {
+            moneymanager = new MoneyManager();
+            
+        }
+        moneymanager.Start();
+    }
 	
 
 

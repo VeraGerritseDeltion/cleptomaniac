@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <SaveClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <moneyManager>
-    <MoneyManager>
-      <moneyOnPerson>683</moneyOnPerson>
-      <maxInInventory>0</maxInInventory>
-      <inInventory>0</inInventory>
-    </MoneyManager>
-    <MoneyManager>
-      <moneyOnPerson>0</moneyOnPerson>
-      <maxInInventory>0</maxInInventory>
-      <inInventory>0</inInventory>
-    </MoneyManager>
-  </moneyManager>
+  <moneymanager>
+    <moneyOnPerson>0</moneyOnPerson>
+    <moneyOnBank>0</moneyOnBank>
+    <maxInInventory>1</maxInInventory>
+    <inInventory>0</inInventory>
+  </moneymanager>
   <test>0</test>
 </SaveClass>

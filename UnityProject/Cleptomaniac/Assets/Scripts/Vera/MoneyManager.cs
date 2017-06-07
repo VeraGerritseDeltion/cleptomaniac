@@ -6,13 +6,13 @@ using UnityEngine.UI;
 [System.Serializable]
 public class MoneyManager {
     public float moneyOnPerson;
-    public static float moneyOnBank;
+    public float moneyOnBank;
     public int maxInInventory = 1;
     public int inInventory;
 
 
-    void Update()
+   public void Start()
     {
-        moneyOnPerson++;
+        InteractManager.moneys = this;
     }
 }

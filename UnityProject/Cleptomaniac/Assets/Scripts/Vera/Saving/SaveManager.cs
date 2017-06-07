@@ -12,7 +12,6 @@ public class SaveManager : MonoBehaviour {
         
         newGame(safeClass);
         safeClass.Start();
-        print(safeClass.moneyManager[0].moneyOnPerson);
     }
 	
 
@@ -30,8 +29,6 @@ public class SaveManager : MonoBehaviour {
     {
         safeClass = Load();
         print(safeClass.test);
-        safeClass.Start();
-        print(safeClass.moneyManager[0].moneyOnPerson);
     }
     public void newGameLoading()
     {

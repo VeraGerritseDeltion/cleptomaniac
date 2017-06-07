@@ -9,12 +9,11 @@ public class Stealable : Interactable {
 
 
     public override void Interacting()
-    {
-        print(moneyManager.inInventory);
+    {;
         if (moneyManager.inInventory < moneyManager.maxInInventory)
         {
             moneyManager.moneyOnPerson += price;
-            print(moneyManager.moneyOnPerson);
+            print(moneyManager.moneyOnPerson + moneyManager.inInventory);
             
             GameObject.Destroy(gameObject);
             moneyManager.inInventory++;

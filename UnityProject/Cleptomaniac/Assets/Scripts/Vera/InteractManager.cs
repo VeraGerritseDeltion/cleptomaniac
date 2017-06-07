@@ -8,7 +8,7 @@ public class InteractManager : MonoBehaviour {
     public RaycastHit targetHit;
     public Interactable interactable;
     public Text e;
-    public MoneyManager moneys;
+    public static MoneyManager moneys;
     public bool inventoryFull;
     public string eText;
     public string invFull;
@@ -44,6 +44,7 @@ public class InteractManager : MonoBehaviour {
                     {
                     inventoryFull = true;
                     }
+                    print(moneys.inInventory + "testing" + moneys.moneyOnPerson);
                 }
                 
             }
