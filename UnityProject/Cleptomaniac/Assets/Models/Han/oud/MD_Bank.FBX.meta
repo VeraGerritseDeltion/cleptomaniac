@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: a04bcd9d479512f4aba1ba279dffb4da
+timeCreated: 1496168548
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MD_Old Door Handle
+    100004: MD_Old Door Inside
+    100006: MD_Old Door Left001
+    100008: MD_Old Door Left002
+    100010: MD_Old stone  wall
+    100012: MD_Old stone Corner
+    100014: MD_Old stone Corner ground floor
+    100016: MD_Old stone Corner inside
+    100018: MD_Old stone doorway outside
+    100020: MD_Old stone floor/roof/celing
+    100022: MD_Old Stone roof corner pice
+    100024: MD_Old stone roof pice
+    100026: MD_Old stone Safe Wall
+    100028: MD_Old stone small Doorway inside
+    100030: MD_Old stone wall
+    100032: MD_Old stone wall inside
+    100034: MD_Old Stone window
+    100036: MD_Old Stone window ground floor
+    100038: MD_Safe Door
+    100040: MD_Safe lock one
+    100042: MD_Safe lock two
+    100044: MD_Window bars
+    100046: MD_Window bars001
+    400000: //RootNode
+    400002: MD_Old Door Handle
+    400004: MD_Old Door Inside
+    400006: MD_Old Door Left001
+    400008: MD_Old Door Left002
+    400010: MD_Old stone  wall
+    400012: MD_Old stone Corner
+    400014: MD_Old stone Corner ground floor
+    400016: MD_Old stone Corner inside
+    400018: MD_Old stone doorway outside
+    400020: MD_Old stone floor/roof/celing
+    400022: MD_Old Stone roof corner pice
+    400024: MD_Old stone roof pice
+    400026: MD_Old stone Safe Wall
+    400028: MD_Old stone small Doorway inside
+    400030: MD_Old stone wall
+    400032: MD_Old stone wall inside
+    400034: MD_Old Stone window
+    400036: MD_Old Stone window ground floor
+    400038: MD_Safe Door
+    400040: MD_Safe lock one
+    400042: MD_Safe lock two
+    400044: MD_Window bars
+    400046: MD_Window bars001
+    2300000: MD_Old Door Handle
+    2300002: MD_Old Door Inside
+    2300004: MD_Old Door Left001
+    2300006: MD_Old Door Left002
+    2300008: MD_Old stone  wall
+    2300010: MD_Old stone Corner
+    2300012: MD_Old stone Corner ground floor
+    2300014: MD_Old stone Corner inside
+    2300016: MD_Old stone doorway outside
+    2300018: MD_Old stone floor/roof/celing
+    2300020: MD_Old Stone roof corner pice
+    2300022: MD_Old stone roof pice
+    2300024: MD_Old stone Safe Wall
+    2300026: MD_Old stone small Doorway inside
+    2300028: MD_Old stone wall
+    2300030: MD_Old stone wall inside
+    2300032: MD_Old Stone window
+    2300034: MD_Old Stone window ground floor
+    2300036: MD_Safe Door
+    2300038: MD_Safe lock one
+    2300040: MD_Safe lock two
+    2300042: MD_Window bars
+    2300044: MD_Window bars001
+    3300000: MD_Old Door Handle
+    3300002: MD_Old Door Inside
+    3300004: MD_Old Door Left001
+    3300006: MD_Old Door Left002
+    3300008: MD_Old stone  wall
+    3300010: MD_Old stone Corner
+    3300012: MD_Old stone Corner ground floor
+    3300014: MD_Old stone Corner inside
+    3300016: MD_Old stone doorway outside
+    3300018: MD_Old stone floor/roof/celing
+    3300020: MD_Old Stone roof corner pice
+    3300022: MD_Old stone roof pice
+    3300024: MD_Old stone Safe Wall
+    3300026: MD_Old stone small Doorway inside
+    3300028: MD_Old stone wall
+    3300030: MD_Old stone wall inside
+    3300032: MD_Old Stone window
+    3300034: MD_Old Stone window ground floor
+    3300036: MD_Safe Door
+    3300038: MD_Safe lock one
+    3300040: MD_Safe lock two
+    3300042: MD_Window bars
+    3300044: MD_Window bars001
+    4300000: MD_Old stone Corner
+    4300002: MD_Old Stone roof corner pice
+    4300004: MD_Old stone roof pice
+    4300006: MD_Old stone floor/roof/celing
+    4300008: MD_Old stone small Doorway inside
+    4300010: MD_Old stone  wall
+    4300012: MD_Old Stone window
+    4300014: MD_Window bars
+    4300016: MD_Old stone Corner ground floor
+    4300018: MD_Old Stone window ground floor
+    4300020: MD_Window bars001
+    4300022: MD_Old stone wall
+    4300024: MD_Old stone doorway outside
+    4300026: MD_Old stone Corner inside
+    4300028: MD_Old stone wall inside
+    4300030: MD_Old stone Safe Wall
+    4300032: MD_Safe Door
+    4300034: MD_Safe lock one
+    4300036: MD_Safe lock two
+    4300038: MD_Old Door Left001
+    4300040: MD_Old Door Inside
+    4300042: MD_Old Door Handle
+    4300044: MD_Old Door Left002
+    7400000: AN_Bank Frond door
+    7400002: AN_Bank Door inside
+    7400004: AN_Bank Safe Door
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: AN_Bank Frond door
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 11
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: MD_Old Door Inside
+        weight: 1
+      - path: MD_Old Door Inside/MD_Old Door Handle
+        weight: 1
+      - path: MD_Old Door Left001
+        weight: 1
+      - path: MD_Old Door Left002
+        weight: 1
+      - path: MD_Old stone  wall
+        weight: 1
+      - path: MD_Old stone Corner
+        weight: 1
+      - path: MD_Old stone Corner ground floor
+        weight: 1
+      - path: MD_Old stone Corner inside
+        weight: 1
+      - path: MD_Old stone doorway outside
+        weight: 1
+      - path: MD_Old stone floor/roof/celing
+        weight: 1
+      - path: MD_Old Stone roof corner pice
+        weight: 1
+      - path: MD_Old stone roof pice
+        weight: 1
+      - path: MD_Old stone Safe Wall
+        weight: 1
+      - path: MD_Old stone small Doorway inside
+        weight: 1
+      - path: MD_Old stone wall
+        weight: 1
+      - path: MD_Old stone wall inside
+        weight: 1
+      - path: MD_Old Stone window
+        weight: 1
+      - path: MD_Old Stone window/MD_Window bars
+        weight: 1
+      - path: MD_Old Stone window ground floor
+        weight: 1
+      - path: MD_Old Stone window ground floor/MD_Window bars001
+        weight: 1
+      - path: MD_Safe Door
+        weight: 1
+      - path: MD_Safe Door/MD_Safe lock one
+        weight: 1
+      - path: MD_Safe Door/MD_Safe lock two
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AN_Bank Door inside
+      takeName: Take 001
+      firstFrame: 12
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: MD_Old Door Inside
+        weight: 1
+      - path: MD_Old Door Inside/MD_Old Door Handle
+        weight: 1
+      - path: MD_Old Door Left001
+        weight: 1
+      - path: MD_Old Door Left002
+        weight: 1
+      - path: MD_Old stone  wall
+        weight: 1
+      - path: MD_Old stone Corner
+        weight: 1
+      - path: MD_Old stone Corner ground floor
+        weight: 1
+      - path: MD_Old stone Corner inside
+        weight: 1
+      - path: MD_Old stone doorway outside
+        weight: 1
+      - path: MD_Old stone floor/roof/celing
+        weight: 1
+      - path: MD_Old Stone roof corner pice
+        weight: 1
+      - path: MD_Old stone roof pice
+        weight: 1
+      - path: MD_Old stone Safe Wall
+        weight: 1
+      - path: MD_Old stone small Doorway inside
+        weight: 1
+      - path: MD_Old stone wall
+        weight: 1
+      - path: MD_Old stone wall inside
+        weight: 1
+      - path: MD_Old Stone window
+        weight: 1
+      - path: MD_Old Stone window/MD_Window bars
+        weight: 1
+      - path: MD_Old Stone window ground floor
+        weight: 1
+      - path: MD_Old Stone window ground floor/MD_Window bars001
+        weight: 1
+      - path: MD_Safe Door
+        weight: 1
+      - path: MD_Safe Door/MD_Safe lock one
+        weight: 1
+      - path: MD_Safe Door/MD_Safe lock two
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AN_Bank Safe Door
+      takeName: Take 001
+      firstFrame: 23
+      lastFrame: 37.5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: MD_Old Door Inside
+        weight: 1
+      - path: MD_Old Door Inside/MD_Old Door Handle
+        weight: 1
+      - path: MD_Old Door Left001
+        weight: 1
+      - path: MD_Old Door Left002
+        weight: 1
+      - path: MD_Old stone  wall
+        weight: 1
+      - path: MD_Old stone Corner
+        weight: 1
+      - path: MD_Old stone Corner ground floor
+        weight: 1
+      - path: MD_Old stone Corner inside
+        weight: 1
+      - path: MD_Old stone doorway outside
+        weight: 1
+      - path: MD_Old stone floor/roof/celing
+        weight: 1
+      - path: MD_Old Stone roof corner pice
+        weight: 1
+      - path: MD_Old stone roof pice
+        weight: 1
+      - path: MD_Old stone Safe Wall
+        weight: 1
+      - path: MD_Old stone small Doorway inside
+        weight: 1
+      - path: MD_Old stone wall
+        weight: 1
+      - path: MD_Old stone wall inside
+        weight: 1
+      - path: MD_Old Stone window
+        weight: 1
+      - path: MD_Old Stone window/MD_Window bars
+        weight: 1
+      - path: MD_Old Stone window ground floor
+        weight: 1
+      - path: MD_Old Stone window ground floor/MD_Window bars001
+        weight: 1
+      - path: MD_Safe Door
+        weight: 1
+      - path: MD_Safe Door/MD_Safe lock one
+        weight: 1
+      - path: MD_Safe Door/MD_Safe lock two
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
