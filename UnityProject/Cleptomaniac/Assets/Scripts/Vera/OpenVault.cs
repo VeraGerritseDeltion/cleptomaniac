@@ -44,7 +44,7 @@ public class OpenVault : Interactable {
         {
             vault.SetBool("OpenDoor", true);
             padLock.enabled = false;
-            Movement.movementStuck = false;
+            MenuManager.inGameStaticInterface = false;
             doorOpend = true;
             MenuManager.inGameStaticInterface = false;
         }
