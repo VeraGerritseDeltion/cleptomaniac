@@ -14,13 +14,15 @@ public class InteractManager : MonoBehaviour {
     public string invFull;
     public bool test;
     public Image value;
+    delegate void StealNoticed();
+    StealNoticed stealNoticed;
 
     void Start()
     {
         e.text = eText;
         value.enabled = false;
     }
-    void Update () {
+    void Update (){
         
         if (Physics.Raycast(transform.position, transform.forward, out targetHit, rayCastLenght) && targetHit.collider.GetComponent<Interactable>() != null )
         {
