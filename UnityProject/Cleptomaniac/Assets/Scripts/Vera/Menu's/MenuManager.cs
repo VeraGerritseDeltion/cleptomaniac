@@ -87,6 +87,7 @@ public class MenuManager : MonoBehaviour {
 
     public void Continue()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         saveManager.loading();        
         menus = Menus.none;
         playedThisSession = true;
