@@ -18,6 +18,7 @@ public class SecurityAI : MonoBehaviour {
     public InteractManager im;
     public Transform lookDirection;
     public int fieldOfView;
+    public Transform character;
 
     void Start(){
 
@@ -60,14 +61,16 @@ public class SecurityAI : MonoBehaviour {
 
     public void StealNoticeVoid(){
         lookDirection.LookAt(player);
-        print(lookDirection);
-        if(Physics.Raycast(lookDirection.transform.position, lookDirection.transform.forward, out rayHit,10) && rayHit.collider.tag == "Player" && lookDirection.transform.rotation.y <= (transform.rotation.y - 50) && lookDirection.transform.rotation.y <= (transform.rotation.y + 50)){
-            print("jalla");
-  
+        if(Physics.Raycast(lookDirection.transform.position, lookDirection.transform.forward, out rayHit,10) && rayHit.collider.tag == "Player"){
+            print(transform.rotation.y);
+            print(lookDirection.transform.rotation.y);
+            if(lookDirection.transform.rotation.y <= transform.rotation.y - 50 && lookDirection.transform.rotation.y >= transform.rotation.y + 50){
+                print("jalla");
+                Debug.DrawRay(lookDirection.transform.position,lookDirection.transform.forward,Color.green,10);
+            }
         }
         else {
             print("panda");
         }
-        Debug.DrawRay(lookDirection.transform.position,lookDirection.transform.forward,Color.red, 10);
     }
 }
