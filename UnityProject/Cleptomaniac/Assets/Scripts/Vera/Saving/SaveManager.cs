@@ -54,6 +54,9 @@ public class SaveManager : MonoBehaviour {
         {
             serializer.Serialize(stream, toSave);
         }
+        toSave.moneymanager.save();
+        InteractManager.moneys = null;
+
     }
 
     public SaveClass Load()

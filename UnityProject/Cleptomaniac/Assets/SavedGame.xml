@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <SaveClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <moneymanager>
-    <moneyOnPerson>0</moneyOnPerson>
+    <moneyOnPerson>50</moneyOnPerson>
     <moneyOnBank>0</moneyOnBank>
-    <maxInInventory>1</maxInInventory>
-    <inInventory>0</inInventory>
+    <maxInInventory>5</maxInInventory>
+    <inInventory>1</inInventory>
   </moneymanager>
   <test>0</test>
 </SaveClass>

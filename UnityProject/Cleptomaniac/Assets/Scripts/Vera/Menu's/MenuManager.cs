@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
     public static bool inGameStaticInterface;
@@ -10,6 +11,8 @@ public class MenuManager : MonoBehaviour {
     public Camera mainMenuCam;
     public SaveManager saveManager;
     public bool playedThisSession;
+    public Text wop;
+    public Text wob;
 
     public enum Menus {main,pause,upgrade,ingame,none}
     public Menus menus;
@@ -20,6 +23,8 @@ public class MenuManager : MonoBehaviour {
 	
 
 	void Update () {
+        wop.text = InteractManager.moneys.moneyOnPerson.ToString();
+        wob.text = InteractManager.moneys.moneyOnBank.ToString();
         if (inGameStaticInterface == true)
         {
             menus = Menus.ingame;
