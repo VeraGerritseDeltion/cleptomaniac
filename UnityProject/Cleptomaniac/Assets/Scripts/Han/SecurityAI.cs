@@ -20,18 +20,12 @@ public class SecurityAI : MonoBehaviour{
     public Transform character;
     public int angleOfSight;
     public Transform lookDirection;
-    public static bool lol;
-    public bool bk;
 
     void Start(){
 
     }
 
     void Update(){
-        lol = bk;
-        if(lol == true){
-            StealNoticeVoid();
-        }
         if(aim.looking == true){
             StealNoticeVoid();
         }
@@ -74,8 +68,8 @@ public class SecurityAI : MonoBehaviour{
             float angle = Vector3.Angle(targetDir,transform.forward);
             if(angle < angleOfSight){
                 lookDirection.LookAt(player);
-                if(Physics.Raycast(transform.position,lookDirection.forward,out rayHit,2) && rayHit.collider.tag == "Player") {
-                    print("yass");
+                if(Physics.Raycast(transform.position,lookDirection.forward,out rayHit,8) && rayHit.collider.tag == "Player") {
+                    aim.wantedState = true;
                 }
             }
         }

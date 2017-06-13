@@ -6,17 +6,19 @@ public class AIManager : MonoBehaviour{
     public bool wantedState;
     public bool looking;
     public float timer;
-    public SecurityAI sai = new SecurityAI();
+    public SecurityAI sai;
+
+    void Start(){
+        sai = new SecurityAI();
+    }
 
 
     void Update(){
         if(looking && timer < 0){
             looking = false;
-            sai.bk = false;
         }
-        else{
+        else if(timer > 0){
             timer -= Time.deltaTime;
-            sai.bk = true;
         }
     }
 }

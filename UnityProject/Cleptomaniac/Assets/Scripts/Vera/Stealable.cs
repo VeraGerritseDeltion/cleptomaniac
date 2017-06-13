@@ -13,7 +13,7 @@ public class Stealable : Interactable {
         if (moneyManager.inInventory < moneyManager.maxInInventory)
         {
             moneyManager.moneyOnPerson += price;
-            print(moneyManager.moneyOnPerson + moneyManager.inInventory);
+            //print(moneyManager.moneyOnPerson + moneyManager.inInventory);
             
             GameObject.Destroy(gameObject);
             moneyManager.inInventory++;
