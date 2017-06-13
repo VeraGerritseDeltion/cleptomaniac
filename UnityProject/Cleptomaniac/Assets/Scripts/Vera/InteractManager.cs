@@ -14,8 +14,8 @@ public class InteractManager : MonoBehaviour {
     public string invFull;
     public bool test;
     public Image value;
-    delegate void StealNoticed();
-    StealNoticed stealNoticed;
+    public AIManager aim;
+    public bool iets;
 
     void Start()
     {
@@ -31,20 +31,27 @@ public class InteractManager : MonoBehaviour {
             if(targetHit.collider.GetComponent<Stealable>() != null)
             {
                 value.enabled = true;
-                value.fillAmount = interactable.value / 3;                
+                value.fillAmount = interactable.value / 3;
+                iets = true;             
+            }
+            else {
+                iets = false;
             }
             
             if (interactable.interacting == false)
             {
                 e.enabled = true;
                
-                if (Input.GetButtonDown("Interact"))
-                {
+                if (Input.GetButtonDown("Interact")){
                     interactable.moneyManager = moneys;
                     interactable.Interacting();
                     if (moneys.inInventory == moneys.maxInInventory && targetHit.collider.tag != "Door")
                     {
                     inventoryFull = true;
+                    }
+                    if(iets == true) {
+                        aim.looking = true;
+                        aim.timer = 0.5f;
                     }
                     print(moneys.inInventory + "testing" + moneys.moneyOnPerson);
                 }

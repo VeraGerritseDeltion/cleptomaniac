@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SecurityAI : MonoBehaviour {
+public class SecurityAI : MonoBehaviour{
     public Transform player;
     public Transform myTransform;
     public NavMeshAgent navigator;
@@ -16,30 +16,40 @@ public class SecurityAI : MonoBehaviour {
     public bool stationary;
     public Animator securityAnimator;
     public InteractManager im;
-    public Transform lookDirection;
     public int fieldOfView;
     public Transform character;
+    public int angleOfSight;
+    public Transform lookDirection;
+    public static bool lol;
+    public bool bk;
 
     void Start(){
 
     }
 
-    void Update() {
-        if(Physics.Raycast(transform.position,transform.forward,out rayHit,2) && rayHit.collider.gameObject.tag == doorTag || Physics.Raycast(transform.position,transform.forward,out rayHit,2) && rayHit.collider.gameObject.tag == carTag) {
+    void Update(){
+        lol = bk;
+        if(lol == true){
+            StealNoticeVoid();
+        }
+        if(aim.looking == true){
+            StealNoticeVoid();
+        }
+        if(Physics.Raycast(transform.position,transform.forward,out rayHit,10) && rayHit.collider.gameObject.tag == doorTag || Physics.Raycast(transform.position,transform.forward,out rayHit,2) && rayHit.collider.gameObject.tag == carTag){
             rayHit.collider.GetComponent<Interactable>().Interacting();
         }
-        else if(aim.wantedState == false) {
-            if(stationary == false) {
+        else if(aim.wantedState == false){
+            if(stationary == false){
                 securityAnimator.SetBool("Walking",true);
                 navigator.SetDestination(checkPoints[currentCheckPoint].transform.position);
-                if(myTransform.position.z == checkPoints[currentCheckPoint].transform.position.z && myTransform.position.x == checkPoints[currentCheckPoint].transform.position.x) {
-                    if(currentCheckPoint == checkPoints.Count - 1) {
+                if(myTransform.position.z == checkPoints[currentCheckPoint].transform.position.z && myTransform.position.x == checkPoints[currentCheckPoint].transform.position.x){
+                    if(currentCheckPoint == checkPoints.Count - 1){
                         currentCheckPoint = 0;
                     }
-                    else {
+                    else{
                         currentCheckPoint++;
                     }
-            }
+                }
 
             }
             else{
@@ -54,23 +64,23 @@ public class SecurityAI : MonoBehaviour {
             securityAnimator.SetBool("Wanted",true);
             navigator.SetDestination(player.position);
         }
-        if(Input.GetButtonDown("Fire1")){
-            StealNoticeVoid();
-        }
     }
 
     public void StealNoticeVoid(){
-        lookDirection.LookAt(player);
-        if(Physics.Raycast(lookDirection.transform.position, lookDirection.transform.forward, out rayHit,10) && rayHit.collider.tag == "Player"){
-            print(transform.rotation.y);
-            print(lookDirection.transform.rotation.y);
-            if(lookDirection.transform.rotation.y <= transform.rotation.y - 50 && lookDirection.transform.rotation.y >= transform.rotation.y + 50){
-                print("jalla");
-                Debug.DrawRay(lookDirection.transform.position,lookDirection.transform.forward,Color.green,10);
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Vector3 toPlayer = player.position - transform.position;
+        if(Vector3.Dot(forward,toPlayer) > 0){
+            Vector3 targetDir = player.transform.position - transform.position;
+            float angle = Vector3.Angle(targetDir,transform.forward);
+            if(angle < angleOfSight){
+                lookDirection.LookAt(player);
+                if(Physics.Raycast(transform.position,lookDirection.forward,out rayHit,2) && rayHit.collider.tag == "Player") {
+                    print("yass");
+                }
             }
         }
-        else {
-            print("panda");
-        }
+
+
     }
 }
+
