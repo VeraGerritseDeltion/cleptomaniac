@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour {
     public static bool playedThisSession;
     public Text wop;
     public Text wob;
+    public static bool endDay;
 
     public enum Menus {main,pause,upgrade,ingame,none}
     public Menus menus;
@@ -29,6 +30,10 @@ public class MenuManager : MonoBehaviour {
 	void Update () {
         wop.text = InteractManager.moneys.moneyOnPerson.ToString();
         wob.text = InteractManager.moneys.moneyOnBank.ToString();
+        if (endDay == true)
+        {
+            menus = Menus.upgrade;
+        }
         if (inGameStaticInterface == true)
         {
             menus = Menus.ingame;
@@ -116,5 +121,11 @@ public class MenuManager : MonoBehaviour {
         //save
         Application.Quit();
         saveManager.saveGame();
+    }
+
+    public void EndDay()
+    {
+        endDay = false;
+        menus = Menus.none;
     }
 }
