@@ -14,9 +14,13 @@ public class MenuManager : MonoBehaviour {
     public Text wop;
     public Text wob;
     public static bool endDay;
-
+    public static bool dead;
+    public UpgradeMenu upgradeMenu;
+    public static bool playing;
     public enum Menus {main,pause,upgrade,ingame,none}
     public Menus menus;
+    public InterfaceManager interfaceM;
+    public Canvas interfaceCanvas;
 
 	void Start () {
         menus = Menus.main;
@@ -30,7 +34,15 @@ public class MenuManager : MonoBehaviour {
 	void Update () {
         wop.text = InteractManager.moneys.moneyOnPerson.ToString();
         wob.text = InteractManager.moneys.moneyOnBank.ToString();
+        if (dead == true)
+        {
+            upgradeMenu.Dead();
+        }
         if (endDay == true)
+        {
+            upgradeMenu.EndDay();
+        }
+        if(upgradeMenu.endDAY == true)
         {
             menus = Menus.upgrade;
         }
@@ -42,10 +54,14 @@ public class MenuManager : MonoBehaviour {
 		if (menus != Menus.none)
         {
             Movement.movementStuck = true;
+            playing = false;
+            interfaceCanvas.enabled = false;
         }
         else
         {
             Movement.movementStuck = false;
+            playing = true;
+            interfaceCanvas.enabled = true;
         }
         if(Input.GetButtonDown("Cancel"))
         {
@@ -83,6 +99,17 @@ public class MenuManager : MonoBehaviour {
         {
             pauseMenuCanvas.enabled = false;
         }
+        if(menus == Menus.upgrade)
+        {
+            upgradeMenuCanvas.enabled = true;
+            mainMenuCam.depth = 1;
+        }
+        else
+        {
+            upgradeMenuCanvas.enabled = false;
+            mainMenuCam.depth = -1;
+        }
+
 	}
     public void exitGame()
     {

@@ -10,14 +10,24 @@ public class UpgradeMenu : MonoBehaviour {
     public int tier1Cost;
     public int tier2Cost;
     public int tier3Cost;
- 
+    public AIManager aiManager;
+    public InterfaceManager interfaceManager;
+    public bool endDAY;
+    public MenuManager menuManager;
+     
 	void Start () {
 		
 	}
 	
 
 	void Update () {
-		
+		if(endDAY == true)
+        {
+            if (Input.GetKeyDown(KeyCode.P)){
+                endDAY = false;
+                NextDay();
+            }
+        }
 	}
     public void Dead()
     {
@@ -30,6 +40,7 @@ public class UpgradeMenu : MonoBehaviour {
         wop.text = InteractManager.moneys.moneyOnPerson.ToString();
         wob.text = InteractManager.moneys.moneyOnBank.ToString();
         StartCoroutine(SetMoneyOnBank());
+        endDAY = true;
     }
 
     public IEnumerator SetMoneyOnBank()
@@ -39,5 +50,15 @@ public class UpgradeMenu : MonoBehaviour {
         InteractManager.moneys.moneyOnPerson = 0;
         wop.text = InteractManager.moneys.moneyOnPerson.ToString();
         wob.text = InteractManager.moneys.moneyOnBank.ToString();
+        
+    }
+
+    public void NextDay()
+    {
+        MenuManager.dead = false;
+        MenuManager.endDay = false;
+        aiManager.wantedState = false;
+        interfaceManager.NextDay();
+        menuManager.menus = MenuManager.Menus.none;
     }
 }

@@ -33,8 +33,9 @@ public class CarAI : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision col){
-        if(col.collider.tag == playerTag){
-            //death bool
+        if(col.collider.tag == playerTag && MenuManager.playing == true){
+            print("test");
+            MenuManager.dead = true;
         }
     }
 }

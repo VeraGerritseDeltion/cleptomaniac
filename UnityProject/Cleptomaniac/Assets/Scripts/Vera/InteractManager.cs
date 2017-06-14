@@ -43,7 +43,6 @@ public class InteractManager : MonoBehaviour {
                 e.enabled = true;
                
                 if (Input.GetButtonDown("Interact")){
-                    interactable.moneyManager = moneys;
                     interactable.Interacting();
                     if (moneys.inInventory == moneys.maxInInventory && targetHit.collider.tag != "Door")
                     {
