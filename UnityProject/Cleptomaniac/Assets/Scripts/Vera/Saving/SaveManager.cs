@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour {
     public SaveClass safeClass;
+    public Restart restart;
 
 	void Start () {
         safeClass = new SaveClass();
@@ -28,15 +29,11 @@ public class SaveManager : MonoBehaviour {
     public void loading()
     {
         safeClass = Load();
-        print(safeClass.test);
     }
     public void newGameLoading()
     {
-        safeClass = NewGameLoad();
-        print(safeClass.test);
-        print("iets");
         safeClass.Start();
-
+        NewGameLoad();
     }
     public void newGame(SaveClass toSave)
     {
@@ -67,12 +64,8 @@ public class SaveManager : MonoBehaviour {
             return serializer.Deserialize(stream) as SaveClass;
         }
     }
-    public SaveClass NewGameLoad()
+    public void NewGameLoad()
     {
-        var serializer = new XmlSerializer(typeof(SaveClass));
-        using (var stream = new System.IO.FileStream(Application.dataPath + "/NewGame.xml", FileMode.Open))
-        {
-            return serializer.Deserialize(stream) as SaveClass;
-        }
+        restart.Restarted();
     }
 }

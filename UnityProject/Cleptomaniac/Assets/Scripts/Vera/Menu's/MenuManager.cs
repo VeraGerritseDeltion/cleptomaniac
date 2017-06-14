@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour {
     public Canvas upgradeMenuCanvas;
     public Camera mainMenuCam;
     public SaveManager saveManager;
-    public bool playedThisSession;
+    public static bool playedThisSession;
     public Text wop;
     public Text wob;
 
@@ -19,6 +19,10 @@ public class MenuManager : MonoBehaviour {
 
 	void Start () {
         menus = Menus.main;
+        if(playedThisSession == true)
+        {
+            menus = Menus.none;
+        }
 	}
 	
 

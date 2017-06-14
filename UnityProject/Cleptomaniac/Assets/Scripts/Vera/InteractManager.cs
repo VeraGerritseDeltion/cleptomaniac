@@ -53,7 +53,6 @@ public class InteractManager : MonoBehaviour {
                         aim.looking = true;
                         aim.timer = 0.5f;
                     }
-                    //print(moneys.inInventory + "testing" + moneys.moneyOnPerson);
                 }
                 
             }
