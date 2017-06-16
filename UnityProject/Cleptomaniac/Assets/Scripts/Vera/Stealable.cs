@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class Stealable : Interactable {
     public float price;
-    
-   
+    public AllItems allItem;
+    public int itemId;
 
+
+    public void Start()
+    {
+        StartCoroutine(AddItem());
+    }
+
+    public IEnumerator AddItem()
+    {
+        yield return new WaitForSeconds(1);
+        allItem = GetComponentInParent<AllItems>();
+        allItem.AddGameobject(gameObject);
+    }
 
     public override void Interacting()
     {;
-        if (InteractManager.moneys.inInventory < InteractManager.moneys.maxInInventory)
+        if (SaveStats.saveClass.inInventory < SaveStats.saveClass.maxInInventory)
         {
-            InteractManager.moneys.moneyOnPerson += price;
+            SaveStats.saveClass.moneyOnPerson += price;
             GameObject.Destroy(gameObject);
-            InteractManager.moneys.inInventory++;
+            SaveStats.saveClass.inInventory++;
+            allItem.allItems[itemId] = null;
+            allItem.itemId[itemId] = 0;
         }
     }
 }

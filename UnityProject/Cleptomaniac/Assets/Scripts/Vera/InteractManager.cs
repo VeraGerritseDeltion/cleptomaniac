@@ -8,7 +8,6 @@ public class InteractManager : MonoBehaviour {
     public RaycastHit targetHit;
     public Interactable interactable;
     public Text e;
-    public static MoneyManager moneys;
     public bool inventoryFull;
     public string eText;
     public string invFull;
@@ -44,7 +43,7 @@ public class InteractManager : MonoBehaviour {
                
                 if (Input.GetButtonDown("Interact")){
                     interactable.Interacting();
-                    if (moneys.inInventory == moneys.maxInInventory && targetHit.collider.tag != "Door")
+                    if (SaveStats.saveClass.inInventory == SaveStats.saveClass.maxInInventory && targetHit.collider.tag != "Door")
                     {
                     inventoryFull = true;
                     }
@@ -70,6 +69,10 @@ public class InteractManager : MonoBehaviour {
             e.enabled = false;
             inventoryFull = false;
             e.text = eText;
+        }
+        if (MenuManager.inMenu == true)
+        {
+            e.enabled = false;
         }
 
         test = false;

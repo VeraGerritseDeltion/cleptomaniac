@@ -14,23 +14,32 @@ public class Movement : MonoBehaviour
     public float upDownRange;
     public Camera cam;
     public Rigidbody player;
-    public float jumpHight;
+    public static float jumpHight = 150;
     public bool jumped;
-    public float walkSpd;
+    public static float walkSpd = 2;
     public float runSpd;
     public float endurance;
-    public float enduranceLenght;
+    public static float enduranceLenght = 100;
     public float enduranceDepletion;
     public bool outOfBreath;
     public float backInBreath;
     public static bool movementStuck;
+    public static Vector3 ownPos;
+    public Vector3 startPos;
 
+    private void Start()
+    {
+        startPos = transform.position;
+    }
     void Update()
     {
+        ownPos = transform.position;
         if(movementStuck == false)
         {
             MovementChar();
-        }    
+        }
+        runSpd = walkSpd * 2;
+        backInBreath = enduranceLenght / 2;
     }
 
     public void MovementChar()
@@ -87,5 +96,15 @@ public class Movement : MonoBehaviour
         {
             jumped = false;
         }
+    }
+
+    public void LoadPos()
+    {
+        transform.position = ownPos;
+    }
+
+    public void NewDay()
+    {
+        transform.position = startPos;
     }
 }

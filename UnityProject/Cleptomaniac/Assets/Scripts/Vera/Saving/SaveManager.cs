@@ -7,11 +7,10 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour {
     public SaveClass safeClass;
     public Restart restart;
+    public AllItems allItems;
 
 	void Start () {
         safeClass = new SaveClass();
-        
-        newGame(safeClass);
         safeClass.Start();
     }
 	
@@ -22,26 +21,23 @@ public class SaveManager : MonoBehaviour {
     }
     public void saveGame()
     {
-        SavedGame(safeClass);
         safeClass.Start();
+        safeClass.Save();
+        allItems.SaveStolenItems();
+        SavedGame(safeClass);
     }
 
     public void loading()
     {
         safeClass = Load();
+        safeClass.Start();
+        safeClass.Load();
+        allItems.LoadItems();
     }
     public void newGameLoading()
     {
         safeClass.Start();
         NewGameLoad();
-    }
-    public void newGame(SaveClass toSave)
-    {
-        var serializer = new XmlSerializer(typeof(SaveClass));
-        using (var stream = new System.IO.FileStream(Application.dataPath + "/NewGame.xml", FileMode.Create))
-        {
-            serializer.Serialize(stream, toSave);
-        }
     }
 
     public void SavedGame(SaveClass toSave)
@@ -51,9 +47,7 @@ public class SaveManager : MonoBehaviour {
         {
             serializer.Serialize(stream, toSave);
         }
-        toSave.moneymanager.save();
-        InteractManager.moneys = null;
-
+        toSave.Save();
     }
 
     public SaveClass Load()

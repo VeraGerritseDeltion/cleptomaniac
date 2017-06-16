@@ -9,6 +9,6 @@ public class EndDayAtDealer : Interactable {
     public override void Interacting()
     {
         MenuManager.endDay = true;
-        InteractManager.moneys.inInventory = 0;
+        SaveStats.saveClass.inInventory = 0;
     }
 }

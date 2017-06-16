@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
-    public MoneyManager moneymanager;
-	// Use this for initialization
+public class EndGame : MonoBehaviour {
+    public int maxDays;
+    public int moneyNeeded;
+
 	void Start () {
 		
 	}

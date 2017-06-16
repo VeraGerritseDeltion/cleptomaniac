@@ -37,7 +37,7 @@ public class SecurityAI : MonoBehaviour
         {
             rayHit.collider.GetComponent<Interactable>().Interacting();
         }
-        else if (aim.wantedState == false)
+        else if (AIManager.wantedState == false)
         {
             if (stationary == false)
             {
@@ -86,7 +86,7 @@ public class SecurityAI : MonoBehaviour
                 lookDirection.LookAt(player);
                 if (Physics.Raycast(transform.position, lookDirection.forward, out rayHit, 8) && rayHit.collider.tag == "Player")
                 {
-                    aim.wantedState = true;
+                    AIManager.wantedState = true;
                 }
             }
         }
@@ -96,7 +96,7 @@ public class SecurityAI : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (aim.wantedState == true && collision.collider.tag == "Player") {
+        if (AIManager.wantedState == true && collision.collider.tag == "Player") {
             MenuManager.dead = true;
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AIManager : MonoBehaviour{
-    public bool wantedState;
+    public static bool wantedState;
     public bool looking;
     public float timer;
     public SecurityAI sai;

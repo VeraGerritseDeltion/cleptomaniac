@@ -17,10 +17,14 @@ public class MenuManager : MonoBehaviour {
     public static bool dead;
     public UpgradeMenu upgradeMenu;
     public static bool playing;
-    public enum Menus {main,pause,upgrade,ingame,none}
+    public enum Menus {main,pause,upgrade,ingame,none,upgrading}
     public Menus menus;
     public InterfaceManager interfaceM;
     public Canvas interfaceCanvas;
+    public Canvas upgradeMenu2Canvas;
+    public bool upgrading;
+    public static bool inMenu;
+    public Movement movement;
 
 	void Start () {
         menus = Menus.main;
@@ -32,8 +36,32 @@ public class MenuManager : MonoBehaviour {
 	
 
 	void Update () {
-        wop.text = InteractManager.moneys.moneyOnPerson.ToString();
-        wob.text = InteractManager.moneys.moneyOnBank.ToString();
+        if (SaveStats.saveClass != null)
+        {
+            wop.text = SaveStats.saveClass.moneyOnPerson.ToString();
+            wob.text = SaveStats.saveClass.moneyOnBank.ToString();
+        }
+        if(menus == Menus.main || menus == Menus.upgrade || menus == Menus.upgrading)
+        {
+            mainMenuCam.depth = 1;
+        }
+        else
+        {
+            mainMenuCam.depth = -1;
+        }
+        if (upgrading == true)
+        {
+            menus = Menus.upgrading;
+            movement.NewDay();
+        }
+        if(menus == Menus.upgrading)
+        {
+            upgradeMenu2Canvas.enabled = true;
+        }
+        else
+        {
+            upgradeMenu2Canvas.enabled = false;
+        }
         if (dead == true)
         {
             upgradeMenu.Dead();
@@ -45,6 +73,7 @@ public class MenuManager : MonoBehaviour {
         if(upgradeMenu.endDAY == true)
         {
             menus = Menus.upgrade;
+            print(menus);
         }
         if (inGameStaticInterface == true)
         {
@@ -56,12 +85,16 @@ public class MenuManager : MonoBehaviour {
             Movement.movementStuck = true;
             playing = false;
             interfaceCanvas.enabled = false;
+            inMenu = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Movement.movementStuck = false;
             playing = true;
             interfaceCanvas.enabled = true;
+            inMenu = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         if(Input.GetButtonDown("Cancel"))
         {
@@ -83,12 +116,10 @@ public class MenuManager : MonoBehaviour {
         if(menus == Menus.main)
         {
             mainMenuCanvas.enabled = true;
-            mainMenuCam.depth = 1;
         }
         else
         {
             mainMenuCanvas.enabled = false;
-            mainMenuCam.depth = -1;
         }
 
         if(menus == Menus.pause)
@@ -102,12 +133,10 @@ public class MenuManager : MonoBehaviour {
         if(menus == Menus.upgrade)
         {
             upgradeMenuCanvas.enabled = true;
-            mainMenuCam.depth = 1;
         }
         else
         {
             upgradeMenuCanvas.enabled = false;
-            mainMenuCam.depth = -1;
         }
 
 	}
@@ -128,10 +157,11 @@ public class MenuManager : MonoBehaviour {
 
     public void Continue()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        saveManager.loading();        
+        saveManager.loading();
+        upgradeMenu.LoadStatsNow();      
         menus = Menus.none;
         playedThisSession = true;
+        movement.LoadPos();
     }
     public void Resume()
     {
@@ -139,15 +169,15 @@ public class MenuManager : MonoBehaviour {
     }
     public void MainMenuAndSave()
     {
-        //save
         menus = Menus.main;
         saveManager.saveGame();
+        upgradeMenu.SaveStatsNow();
     }
     public void ExitAndSave()
     {
-        //save
         Application.Quit();
         saveManager.saveGame();
+        upgradeMenu.SaveStatsNow();
     }
 
     public void EndDay()

@@ -5,22 +5,23 @@ using UnityEngine.UI;
 
 public class InterfaceManager : MonoBehaviour {
     public Text text;
-    public int currentDay;
+    public static int currentDay = 1;
     public int lastDay;
 
 	// Use this for initialization
 	void Start () {
-        text.text = currentDay.ToString() + " / " + lastDay.ToString() + "days";
+
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		text.text = currentDay.ToString() + " / " + lastDay.ToString() + " days";
 	}
 
     public void NextDay()
     {
         currentDay++;
-        text.text = currentDay.ToString() + " / " + lastDay.ToString() + "days";
+        text.text = currentDay.ToString() + " / " + lastDay.ToString() + " days";
     }
 }

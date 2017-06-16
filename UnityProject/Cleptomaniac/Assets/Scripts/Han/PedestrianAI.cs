@@ -74,7 +74,7 @@ public class PedestrianAI : MonoBehaviour {
             if(angle < angleOfSight) {
                 lookDirection.LookAt(player);
                 if(Physics.Raycast(transform.position,lookDirection.forward,out rayHit2,8) && rayHit2.collider.tag == "Player") {
-                    aim.wantedState = true;
+                    AIManager.wantedState = true;
                 }
             }
         }
