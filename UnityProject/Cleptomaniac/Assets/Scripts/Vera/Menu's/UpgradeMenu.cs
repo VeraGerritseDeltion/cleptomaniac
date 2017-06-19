@@ -39,6 +39,9 @@ public class UpgradeMenu : MonoBehaviour {
     public Text donutText;
 
     public Text moneyLeftOnBank;
+    public Text costOnMouse;
+
+    public bool upgrading;
      
 	void Start () {
 
@@ -46,6 +49,10 @@ public class UpgradeMenu : MonoBehaviour {
 	
 
 	void Update () {
+        if (upgrading == true)
+        {
+            costOnMouse.transform.position = Input.mousePosition;
+        }
 
 	}
     public void Dead()
@@ -278,5 +285,84 @@ public class UpgradeMenu : MonoBehaviour {
         invCapTier = SaveStats.saveClass.invCapTiers;
         keysAmount = SaveStats.saveClass.keysAmounts;
         donutAmount = SaveStats.saveClass.donutAmounts;
+    }
+
+    public int ShowCost(int i)
+    {
+        upgrading = true;
+        int price = 0;
+        if(i == 0)
+        {
+            
+            if(speedTier == 0)
+            {
+                price = tier1Cost;
+            }
+            if(speedTier == 1)
+            {
+                price = tier2Cost;
+            }
+            if(speedTier == 2)
+            {
+                price = tier3Cost;
+            }
+        }
+        if (i == 1)
+        {
+
+            if (enduranceTier == 0)
+            {
+                price = tier1Cost;
+            }
+            if (enduranceTier == 1)
+            {
+                price = tier2Cost;
+            }
+            if (enduranceTier == 2)
+            {
+                price = tier3Cost;
+            }
+        }
+        if (i == 2)
+        {
+
+            if (jumpTier == 0)
+            {
+                price = tier1Cost;
+            }
+            if (jumpTier == 1)
+            {
+                price = tier2Cost;
+            }
+            if (jumpTier == 2)
+            {
+                price = tier3Cost;
+            }
+        }
+        if (i == 3)
+        {
+
+            if (invCapTier == 0)
+            {
+                price = tier1Cost;
+            }
+            if (invCapTier == 1)
+            {
+                price = tier2Cost;
+            }
+            if (invCapTier == 2)
+            {
+                price = tier3Cost;
+            }
+        }
+        if (i == 4)
+        {
+            price = donutCost;            
+        }
+        if (i == 5)
+        {
+            price = keysCost;
+        }
+        return price;
     }
 }

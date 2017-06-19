@@ -21,7 +21,6 @@ public class SaveClass {
     public Vector3 charPos;
     public int currentDay;
     public List<int> test = new List<int>();
-    public int listLenght;
 
     public float moneyOnPerson;
     public float moneyOnBank;
