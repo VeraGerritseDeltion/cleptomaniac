@@ -12,9 +12,9 @@
   <inventorySpace>3</inventorySpace>
   <wanted>false</wanted>
   <charPos>
-    <x>-13.2175369</x>
-    <y>0.5343194</y>
-    <z>-18.1922035</z>
+    <x>-15.4709778</x>
+    <y>0.4713058</y>
+    <z>-16.5189075</z>
   </charPos>
   <currentDay>1</currentDay>
   <test>
@@ -45,4 +45,6 @@
   <moneyOnBank>0</moneyOnBank>
   <maxInInventory>3</maxInInventory>
   <inInventory>0</inInventory>
+  <difficulty>0</difficulty>
+  <EverPlayedOnThisPc>true</EverPlayedOnThisPc>
 </SaveClass>

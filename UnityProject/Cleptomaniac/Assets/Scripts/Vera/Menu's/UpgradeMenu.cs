@@ -18,6 +18,7 @@ public class UpgradeMenu : MonoBehaviour {
     public InterfaceManager interfaceManager;
     public bool endDAY;
     public MenuManager menuManager;
+    public EndGame endGame;
 
     public int speedTier;
     public int enduranceTier;
@@ -29,6 +30,8 @@ public class UpgradeMenu : MonoBehaviour {
 
     public int keysCost;
     public int donutCost;
+
+    public static float moneyTotal;
 
     public Text speedTierText;
     public Text enduranceTierText;
@@ -74,7 +77,7 @@ public class UpgradeMenu : MonoBehaviour {
         MenuManager.dead = false;
         MenuManager.endDay = false;
         menuManager.upgrading = true;
-
+        moneyTotal += SaveStats.saveClass.moneyOnPerson;
         SaveStats.saveClass.moneyOnBank += SaveStats.saveClass.moneyOnPerson;
         SaveStats.saveClass.moneyOnPerson = 0;
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
@@ -82,12 +85,17 @@ public class UpgradeMenu : MonoBehaviour {
     
 public void NextDay()
     {
-
-        interfaceManager.NextDay();
-        menuManager.upgrading = false;
-        menuManager.menus = MenuManager.Menus.none;
-        SaveStats.saveClass.inInventory = 0;
-        
+        if (InterfaceManager.currentDay != endGame.maxDays)
+        {
+            interfaceManager.NextDay();
+            menuManager.upgrading = false;
+            menuManager.menus = MenuManager.Menus.none;
+            SaveStats.saveClass.inInventory = 0;
+        }
+        else
+        {
+            endGame.endgame();
+        }
     }
 
     public void MoreSpeed()

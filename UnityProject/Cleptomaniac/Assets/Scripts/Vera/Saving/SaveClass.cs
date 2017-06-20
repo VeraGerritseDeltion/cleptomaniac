@@ -24,12 +24,22 @@ public class SaveClass {
 
     public float moneyOnPerson;
     public float moneyOnBank;
+    public float totalMoney;
     public int maxInInventory = 3;
     public int inInventory;
+
+    public int difficulty;
+
+    public bool EverPlayedOnThisPc;
 
 	public void Start () {
 
         SaveStats.saveClass = this;
+    }
+
+    public void played()
+    {
+        MenuManager.everPlayed = EverPlayedOnThisPc;
     }
 
     public void Save()
@@ -43,6 +53,9 @@ public class SaveClass {
         currentDay = InterfaceManager.currentDay;
         moneyOnBank = SaveStats.saveClass.moneyOnBank;
         moneyOnPerson = SaveStats.saveClass.moneyOnPerson;
+        difficulty = EndGame.difficulty;
+        EverPlayedOnThisPc = MenuManager.everPlayed;
+        totalMoney = UpgradeMenu.moneyTotal;
     }
 
     public void Load()
@@ -54,5 +67,7 @@ public class SaveClass {
         Movement.ownPos = charPos;
         AIManager.wantedState = wanted;
         InterfaceManager.currentDay = currentDay;
+        EndGame.difficulty = difficulty;
+        UpgradeMenu.moneyTotal = totalMoney;
     }
 }

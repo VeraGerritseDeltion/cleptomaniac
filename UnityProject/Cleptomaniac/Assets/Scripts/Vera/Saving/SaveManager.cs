@@ -8,10 +8,15 @@ public class SaveManager : MonoBehaviour {
     public SaveClass safeClass;
     public Restart restart;
     public AllItems allItems;
+    public SaveClass tempLoad;
 
 	void Start () {
         safeClass = new SaveClass();
+        tempLoad = new SaveClass();
+        tempLoad = Load();
+        tempLoad.played();
         safeClass.Start();
+
     }
 	
 
@@ -25,12 +30,14 @@ public class SaveManager : MonoBehaviour {
         safeClass.Save();
         allItems.SaveStolenItems();
         SavedGame(safeClass);
+        tempLoad = Load();
     }
 
     public void loading()
     {
-        safeClass = Load();
+        safeClass = tempLoad;
         safeClass.Start();
+        safeClass.played();
         safeClass.Load();
         allItems.LoadItems();
     }

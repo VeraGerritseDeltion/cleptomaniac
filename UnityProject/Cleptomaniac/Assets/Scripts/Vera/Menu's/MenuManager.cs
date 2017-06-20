@@ -5,35 +5,42 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
     public static bool inGameStaticInterface;
+    public static bool playedThisSession;
+    public static bool endDay;
+    public static bool dead;
+    public static bool everPlayed;
+    public static bool inMenu;
+    public static bool playing;
+
     public Canvas mainMenuCanvas;
     public Canvas pauseMenuCanvas;
     public Canvas upgradeMenuCanvas;
-    public Camera mainMenuCam;
+    public Canvas difficultyCanvas;
+    public Canvas interfaceCanvas;
+    public Canvas endGameCanvas;
+
     public SaveManager saveManager;
-    public static bool playedThisSession;
+    public UpgradeMenu upgradeMenu;
+    public InterfaceManager interfaceM;
+    public Movement movement;
+
     public Text wop;
     public Text wob;
-    public static bool endDay;
-    public static bool dead;
-    public UpgradeMenu upgradeMenu;
-    public static bool playing;
-    public enum Menus {main,pause,upgrade,ingame,none}
-    public Menus menus;
-    public InterfaceManager interfaceM;
-    public Canvas interfaceCanvas;
+    public Camera mainMenuCam;
     public bool upgrading;
-    public static bool inMenu;
-    public Movement movement;
+    public GameObject continueButton;
+
+    public enum Menus {main,pause,upgrade,ingame,none,difficulty,end}
+    public Menus menus;
 
 	void Start () {
         menus = Menus.main;
         if(playedThisSession == true)
         {
-            menus = Menus.none;
+            menus = Menus.difficulty;
         }
 	}
 	
-
 	void Update () {
         if (SaveStats.saveClass != null)
         {
@@ -106,6 +113,14 @@ public class MenuManager : MonoBehaviour {
         if(menus == Menus.main)
         {
             mainMenuCanvas.enabled = true;
+            if(everPlayed == true)
+            {
+                continueButton.SetActive(true);
+            }
+            else
+            {
+                continueButton.SetActive(false);
+            }
         }
         else
         {
@@ -128,6 +143,22 @@ public class MenuManager : MonoBehaviour {
         {
             upgradeMenuCanvas.enabled = false;
         }
+        if(menus == Menus.difficulty)
+        {
+            difficultyCanvas.enabled = true;
+        }
+        else
+        {
+            difficultyCanvas.enabled = false;
+        }
+        if(menus == Menus.end)
+        {
+            endGameCanvas.enabled = true;
+        }
+        else
+        {
+            endGameCanvas.enabled = false;
+        }
 
 	}
     public void exitGame()
@@ -136,15 +167,19 @@ public class MenuManager : MonoBehaviour {
     }
 
     public void NewGame()
-    {if (playing == false)
+    {
+        if 
+            (playing == false)
         {
-            menus = Menus.none;
+            menus = Menus.difficulty;
             if (playedThisSession == true)
             {
                 saveManager.newGameLoading();
             }
             playedThisSession = true;
+            everPlayed = true;
         }
+
     }
 
     public void Continue()
@@ -170,14 +205,32 @@ public class MenuManager : MonoBehaviour {
     }
     public void ExitAndSave()
     {
-        Application.Quit();
-        saveManager.saveGame();
         upgradeMenu.SaveStatsNow();
+        saveManager.saveGame();
+        Application.Quit();
     }
 
     public void EndDay()
     {
         endDay = false;
         menus = Menus.none;
+    }
+
+    public void Easy()
+    {
+        menus = Menus.none;
+        EndGame.difficulty = 0;
+    }
+
+    public void Medium()
+    {
+        menus = Menus.none;
+        EndGame.difficulty = 1;
+    }
+
+    public void Hard()
+    {
+        menus = Menus.none;
+        EndGame.difficulty = 2;
     }
 }
