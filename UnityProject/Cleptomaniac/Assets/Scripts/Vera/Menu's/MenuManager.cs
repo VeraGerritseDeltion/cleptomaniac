@@ -17,11 +17,10 @@ public class MenuManager : MonoBehaviour {
     public static bool dead;
     public UpgradeMenu upgradeMenu;
     public static bool playing;
-    public enum Menus {main,pause,upgrade,ingame,none,upgrading}
+    public enum Menus {main,pause,upgrade,ingame,none}
     public Menus menus;
     public InterfaceManager interfaceM;
     public Canvas interfaceCanvas;
-    public Canvas upgradeMenu2Canvas;
     public bool upgrading;
     public static bool inMenu;
     public Movement movement;
@@ -41,7 +40,7 @@ public class MenuManager : MonoBehaviour {
             wop.text = SaveStats.saveClass.moneyOnPerson.ToString();
             wob.text = SaveStats.saveClass.moneyOnBank.ToString();
         }
-        if(menus == Menus.main || menus == Menus.upgrade || menus == Menus.upgrading)
+        if(menus == Menus.main || menus == Menus.upgrade)
         {
             mainMenuCam.depth = 1;
         }
@@ -51,16 +50,7 @@ public class MenuManager : MonoBehaviour {
         }
         if (upgrading == true)
         {
-            menus = Menus.upgrading;
             movement.NewDay();
-        }
-        if(menus == Menus.upgrading)
-        {
-            upgradeMenu2Canvas.enabled = true;
-        }
-        else
-        {
-            upgradeMenu2Canvas.enabled = false;
         }
         if (dead == true)
         {
@@ -146,22 +136,27 @@ public class MenuManager : MonoBehaviour {
     }
 
     public void NewGame()
-    {
-        menus = Menus.none;
-        if (playedThisSession == true)
+    {if (playing == false)
         {
-            saveManager.newGameLoading();
+            menus = Menus.none;
+            if (playedThisSession == true)
+            {
+                saveManager.newGameLoading();
+            }
+            playedThisSession = true;
         }
-        playedThisSession = true;
     }
 
     public void Continue()
     {
-        saveManager.loading();
-        upgradeMenu.LoadStatsNow();      
-        menus = Menus.none;
-        playedThisSession = true;
-        movement.LoadPos();
+        if (playing == false)
+        {
+            saveManager.loading();
+            upgradeMenu.LoadStatsNow();
+            menus = Menus.none;
+            playedThisSession = true;
+            movement.LoadPos();
+        }
     }
     public void Resume()
     {

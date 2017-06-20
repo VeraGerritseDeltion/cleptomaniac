@@ -63,10 +63,6 @@ public class UpgradeMenu : MonoBehaviour {
 
     public void EndDay()
     {
-        wop.text = SaveStats.saveClass.moneyOnPerson.ToString();
-        wob.text = SaveStats.saveClass.moneyOnBank.ToString();
-        StartCoroutine(SetMoneyOnBank());
-
         AIManager.wantedState = false;
         speedTierText.text = "Speed Tier: " + speedTier.ToString();
         donutText.text = "Donut Amount: " + donutAmount.ToString();
@@ -74,31 +70,17 @@ public class UpgradeMenu : MonoBehaviour {
         invCapTierText.text = "Inventory Size Tier: " + invCapTier.ToString();
         jumpTierText.text = "Jump Height Tier : " + jumpTier.ToString();
         enduranceTierText.text = "Endurance Tier:" + enduranceTier.ToString();
-
-        endDAY = true;
+        menuManager.menus = MenuManager.Menus.upgrade;
         MenuManager.dead = false;
         MenuManager.endDay = false;
-        print(menuManager.upgrading + "test");
-    }
+        menuManager.upgrading = true;
 
-    public IEnumerator SetMoneyOnBank()
-    {
-        yield return new WaitForSeconds(2);
         SaveStats.saveClass.moneyOnBank += SaveStats.saveClass.moneyOnPerson;
         SaveStats.saveClass.moneyOnPerson = 0;
-        SaveStats.saveClass.moneyOnPerson.ToString();
-        SaveStats.saveClass.moneyOnBank.ToString();
-        StartCoroutine(NextScreen());
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
     }
-
-    public IEnumerator NextScreen()
-    {
-        yield return new WaitForSeconds(1);
-        endDAY = false;
-        menuManager.upgrading = true;
-    }
-    public void NextDay()
+    
+public void NextDay()
     {
 
         interfaceManager.NextDay();

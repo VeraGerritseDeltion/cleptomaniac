@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
     {
         startPos = transform.position;
     }
-    void Update()
+    private void FixedUpdate()
     {
         ownPos = transform.position;
         if(movementStuck == false)

@@ -6,17 +6,17 @@
   <invCapTiers>0</invCapTiers>
   <keysAmounts>0</keysAmounts>
   <donutAmounts>0</donutAmounts>
-  <speed>2.2</speed>
+  <speed>2</speed>
   <jumpHeight>150</jumpHeight>
   <endurance>100</endurance>
   <inventorySpace>3</inventorySpace>
   <wanted>false</wanted>
   <charPos>
-    <x>-17.02</x>
-    <y>0.8577179</y>
-    <z>-18.939</z>
+    <x>-13.2175369</x>
+    <y>0.5343194</y>
+    <z>-18.1922035</z>
   </charPos>
-  <currentDay>2</currentDay>
+  <currentDay>1</currentDay>
   <test>
     <int>0</int>
     <int>1</int>
@@ -28,12 +28,12 @@
     <int>1</int>
     <int>1</int>
     <int>1</int>
-    <int>0</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
-    <int>0</int>
-    <int>0</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
@@ -42,7 +42,7 @@
     <int>1</int>
   </test>
   <moneyOnPerson>0</moneyOnPerson>
-  <moneyOnBank>20</moneyOnBank>
+  <moneyOnBank>0</moneyOnBank>
   <maxInInventory>3</maxInInventory>
   <inInventory>0</inInventory>
 </SaveClass>
