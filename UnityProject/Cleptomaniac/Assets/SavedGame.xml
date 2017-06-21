@@ -10,14 +10,23 @@
   <jumpHeight>150</jumpHeight>
   <endurance>100</endurance>
   <inventorySpace>3</inventorySpace>
-  <wanted>false</wanted>
+  <wanted>true</wanted>
   <charPos>
-    <x>-15.4709778</x>
-    <y>0.4713058</y>
-    <z>-16.5189075</z>
+    <x>0.785003245</x>
+    <y>0.441233635</y>
+    <z>-7.801071</z>
   </charPos>
-  <currentDay>1</currentDay>
+  <currentDay>2</currentDay>
   <test>
+    <int>0</int>
+    <int>1</int>
+    <int>1</int>
+    <int>0</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
     <int>0</int>
     <int>1</int>
     <int>1</int>
@@ -31,20 +40,12 @@
     <int>1</int>
     <int>1</int>
     <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
   </test>
-  <moneyOnPerson>0</moneyOnPerson>
+  <moneyOnPerson>75</moneyOnPerson>
   <moneyOnBank>0</moneyOnBank>
+  <totalMoney>0</totalMoney>
   <maxInInventory>3</maxInInventory>
-  <inInventory>0</inInventory>
+  <inInventory>2</inInventory>
   <difficulty>0</difficulty>
   <EverPlayedOnThisPc>true</EverPlayedOnThisPc>
 </SaveClass>

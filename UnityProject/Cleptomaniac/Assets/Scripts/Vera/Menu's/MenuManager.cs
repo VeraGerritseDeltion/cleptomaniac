@@ -62,6 +62,7 @@ public class MenuManager : MonoBehaviour {
         if (dead == true)
         {
             upgradeMenu.Dead();
+            AIManager.wantedState = false;
         }
         if (endDay == true)
         {
