@@ -47,7 +47,7 @@ public class UpgradeMenu : MonoBehaviour {
     public bool upgrading;
      
 	void Start () {
-
+        donutCost = 100;
     }
 	
 

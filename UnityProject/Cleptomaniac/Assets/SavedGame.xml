@@ -10,24 +10,62 @@
   <jumpHeight>150</jumpHeight>
   <endurance>100</endurance>
   <inventorySpace>3</inventorySpace>
-  <wanted>true</wanted>
+  <wanted>false</wanted>
   <charPos>
-    <x>0.785003245</x>
-    <y>0.441233635</y>
-    <z>-7.801071</z>
+    <x>-10.5151558</x>
+    <y>0.4345141</y>
+    <z>-21.503912</z>
   </charPos>
-  <currentDay>2</currentDay>
+  <currentDay>1</currentDay>
   <test>
     <int>0</int>
     <int>1</int>
     <int>1</int>
-    <int>0</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
-    <int>0</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
@@ -41,11 +79,11 @@
     <int>1</int>
     <int>1</int>
   </test>
-  <moneyOnPerson>75</moneyOnPerson>
+  <moneyOnPerson>0</moneyOnPerson>
   <moneyOnBank>0</moneyOnBank>
   <totalMoney>0</totalMoney>
   <maxInInventory>3</maxInInventory>
-  <inInventory>2</inInventory>
-  <difficulty>0</difficulty>
+  <inInventory>0</inInventory>
+  <difficulty>1</difficulty>
   <EverPlayedOnThisPc>true</EverPlayedOnThisPc>
 </SaveClass>

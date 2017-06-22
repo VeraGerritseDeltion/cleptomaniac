@@ -25,7 +25,7 @@ public class EndGame : MonoBehaviour {
     public Text moneyTotal;
 
     void Start () {
-		
+        maxDays = 5;
 	}
 	
 	void Update () {

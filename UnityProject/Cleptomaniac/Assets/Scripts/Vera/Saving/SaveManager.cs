@@ -12,8 +12,16 @@ public class SaveManager : MonoBehaviour {
 
 	void Start () {
         safeClass = new SaveClass();
-        tempLoad = new SaveClass();
-        tempLoad = Load();
+        if(File.Exists(Application.dataPath + "/SavedGame.xml"))
+        {
+            tempLoad = Load();
+        }
+        else
+        {
+            tempLoad = new SaveClass();
+        }
+        
+        
         tempLoad.played();
         safeClass.Start();
 
