@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/MarktMedia Modulair Prefab.unity
+  isLoaded: 1
+  isActive: 1
