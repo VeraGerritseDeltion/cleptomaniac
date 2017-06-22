@@ -12,7 +12,10 @@ public class CameraAI : MonoBehaviour{
     public int maxAngle;
     public bool turningSide;
     public float turn;
-    public bool willem;
+    
+    void Start(){
+        turn = transform.rotation.y;
+    }
 
     void Update(){
         if(aim.looking == true){
@@ -25,7 +28,7 @@ public class CameraAI : MonoBehaviour{
             turn -= turningSpeed * Time.deltaTime;
         }
         turn = Mathf.Clamp(turn,-maxAngle,maxAngle);
-        transform.localEulerAngles = new Vector3(0,TurningSide(turn),transform.rotation.z);
+        transform.localEulerAngles = new Vector3(transform.rotation.x,TurningSide(turn),-20);
     }
 
     public void StealNoticeVoid(){
