@@ -14,6 +14,7 @@ public class PedestrianAI : MonoBehaviour {
     public string doorTag;
     public string carTag;
     public string playerTag;
+    public string aiTag;
     public AIManager aim;
     public bool stationary;
     public InteractManager im;
@@ -24,7 +25,7 @@ public class PedestrianAI : MonoBehaviour {
     public bool standStil;
     public Animator characterAnimation;
 
-    void Start(){
+    void Start() {
         characterAnimation.SetBool("Walking",true);
         navigator.SetDestination(checkPoints[currentCheckPoint].transform.position);
     }
@@ -38,11 +39,11 @@ public class PedestrianAI : MonoBehaviour {
                 rayHit.collider.GetComponent<Interactable>().Interacting();
             }
         }
-        if(stationary == false && standStil == false) {
+        else if(stationary == false && standStil == false) {
             characterAnimation.SetBool("Walking",true);
             navigator.SetDestination(checkPoints[currentCheckPoint].transform.position);
             if(myTransform.position.z == checkPoints[currentCheckPoint].transform.position.z && myTransform.position.x == checkPoints[currentCheckPoint].transform.position.x) {
-                if(currentCheckPoint == checkPoints.Count - 1){
+                if(currentCheckPoint == checkPoints.Count - 1) {
                     timer = stilStandingTime;
                     standStil = true;
                     characterAnimation.SetBool("Walking",false);
@@ -53,8 +54,8 @@ public class PedestrianAI : MonoBehaviour {
             }
 
         }
-        else if(standStil == true){
-            if(timer <= 0){
+        else if(standStil == true) {
+            if(timer <= 0) {
                 standStil = false;
                 currentCheckPoint = 0;
             }
@@ -80,12 +81,3 @@ public class PedestrianAI : MonoBehaviour {
         }
     }
 }
-
-            /*if(transform.position.z == checkPoints[currentCheckPoint].transform.position.z && transform.position.x == checkPoints[currentCheckPoint].transform.position.x && stopWalking == false){
-                currentCheckPoint++;
-                navigator.SetDestination(checkPoints[currentCheckPoint].transform.position);
-                if(currentCheckPoint == checkPoints.Count){
-                    pedestrionAnimator.SetBool("Walking",false);
-                    stopWalking = true;
-                    timer = stilStandingTime;
-                }*/
