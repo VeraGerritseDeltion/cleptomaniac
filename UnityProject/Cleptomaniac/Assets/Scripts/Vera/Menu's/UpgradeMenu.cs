@@ -107,6 +107,7 @@ public void NextDay()
                 Movement.walkSpd *= tier1Extra;
                 speedTier++;
                 SaveStats.saveClass.moneyOnBank -= tier1Cost;
+                moneyTotal += tier1Cost;
             }
         }
         else if (speedTier == 1)
@@ -116,6 +117,7 @@ public void NextDay()
                 Movement.walkSpd *= tier2Extra;
                 speedTier++;
                 SaveStats.saveClass.moneyOnBank -= tier2Cost;
+                moneyTotal += tier2Cost;
             }
         }
         else if(speedTier == 2)
@@ -125,6 +127,7 @@ public void NextDay()
                 Movement.walkSpd *= tier3Extra;
                 speedTier++;
                 SaveStats.saveClass.moneyOnBank -= tier3Cost;
+                moneyTotal += tier3Cost;
             }
         }
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
@@ -140,6 +143,7 @@ public void NextDay()
                 Movement.enduranceLenght *= tier1Extra;
                 enduranceTier++;
                 SaveStats.saveClass.moneyOnBank -= tier1Cost;
+                moneyTotal += tier1Cost;
             }
         }
         else if (enduranceTier == 1)
@@ -149,6 +153,7 @@ public void NextDay()
                 Movement.enduranceLenght *= tier2Extra;
                 enduranceTier++;
                 SaveStats.saveClass.moneyOnBank -= tier2Cost;
+                moneyTotal += tier2Cost;
             }
         }
         else if (enduranceTier == 2)
@@ -158,6 +163,7 @@ public void NextDay()
                 Movement.enduranceLenght *= tier3Extra;
                 enduranceTier++;
                 SaveStats.saveClass.moneyOnBank -= tier3Cost;
+                moneyTotal += tier3Cost;
             }
         }
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
@@ -173,6 +179,7 @@ public void NextDay()
                 Movement.jumpHight *= tier1Extra;
                 jumpTier++;
                 SaveStats.saveClass.moneyOnBank -= tier1Cost;
+                moneyTotal += tier1Cost;
             }
         }
         else if (jumpTier == 1)
@@ -182,6 +189,7 @@ public void NextDay()
                 Movement.jumpHight *= tier2Extra;
                 jumpTier++;
                 SaveStats.saveClass.moneyOnBank -= tier2Cost;
+                moneyTotal += tier2Cost;
             }
         }
         else if (jumpTier == 2)
@@ -191,6 +199,7 @@ public void NextDay()
                 Movement.jumpHight *= tier3Extra;
                 jumpTier++;
                 SaveStats.saveClass.moneyOnBank -= tier3Cost;
+                moneyTotal += tier3Cost;
             }
         }
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
@@ -206,6 +215,7 @@ public void NextDay()
                 SaveStats.saveClass.maxInInventory += 2;
                 invCapTier++;
                 SaveStats.saveClass.moneyOnBank -= tier1Cost;
+                moneyTotal += tier1Cost;
             }
         }
         else if (invCapTier == 1)
@@ -215,6 +225,7 @@ public void NextDay()
                 SaveStats.saveClass.maxInInventory += 3;
                 invCapTier++;
                 SaveStats.saveClass.moneyOnBank -= tier2Cost;
+                moneyTotal += tier2Cost;
             }
         }
         else if (invCapTier == 2)
@@ -224,6 +235,7 @@ public void NextDay()
                 SaveStats.saveClass.maxInInventory += 4;
                 invCapTier++;
                 SaveStats.saveClass.moneyOnBank -= tier3Cost;
+                moneyTotal += tier3Cost;
             }
         }
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
@@ -236,9 +248,11 @@ public void NextDay()
         {
             SaveStats.saveClass.moneyOnBank -= keysCost;
             keysAmount++;
+            moneyTotal += keysCost;
         }
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
         keysText.text = "Keys Amount: " + keysAmount.ToString();
+        
     }
 
     public void MoreDonut()
@@ -247,9 +261,11 @@ public void NextDay()
         {
             SaveStats.saveClass.moneyOnBank -= donutCost;
             donutAmount++;
+            moneyTotal += donutCost;
         }
         moneyLeftOnBank.text = SaveStats.saveClass.moneyOnBank.ToString();
         donutText.text = "Donut Amount: " + donutAmount.ToString();
+
     }
 
     public void Resume()

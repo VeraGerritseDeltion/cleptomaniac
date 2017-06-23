@@ -25,7 +25,6 @@ public class EndGame : MonoBehaviour {
     public Text moneyTotal;
 
     void Start () {
-        maxDays = 5;
 	}
 	
 	void Update () {
@@ -43,19 +42,32 @@ public class EndGame : MonoBehaviour {
         }
         if(countingUpBank == true)
         {
-            moneyBank--;
-            moneyTot++;
+
             if(moneyBank == 0)
             {
                 countingUpBank = false;
                 countingUsed = true;
             }
+            else
+            {
+                moneyBank--;
+                print(moneyBank);
+                moneyTot++;
+                moneyInBank.text = moneyBank.ToString();
+                moneyTotal.text = moneyTot.ToString();
+            }
         }
         if(countingUsed == true)
         {
-            moneyUsedInt--;
+
+            if (moneyUsedInt != 0)
+            {
+                moneyUsedInt--;
             moneyTot++;
-            if(moneyUsedInt == 0)
+            moneyUsed.text = moneyUsedInt.ToString();
+            moneyTotal.text = moneyTot.ToString();
+            }
+            else if(moneyUsedInt == 0)
             {
                 countingUsed = false;
             }
@@ -71,6 +83,8 @@ public class EndGame : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.5f);
         moneyBank = SaveStats.saveClass.moneyOnBank;
+        moneyInBank.text = moneyBank.ToString();
+        moneyTotal.text = moneyTot.ToString();
         StartCoroutine(Used());
     }
     public IEnumerator Used()
@@ -78,6 +92,6 @@ public class EndGame : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         countingUpBank = true;
         print(UpgradeMenu.moneyTotal);
-        moneyUsedInt = UpgradeMenu.moneyTotal - SaveStats.saveClass.moneyOnBank;
+        moneyUsed.text = moneyUsedInt.ToString();
     }
 }

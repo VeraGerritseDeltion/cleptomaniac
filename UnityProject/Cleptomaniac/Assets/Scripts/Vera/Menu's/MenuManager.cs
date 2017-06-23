@@ -23,11 +23,13 @@ public class MenuManager : MonoBehaviour {
     public UpgradeMenu upgradeMenu;
     public InterfaceManager interfaceM;
     public Movement movement;
+    public EndGame endGame;
 
     public Text wop;
     public Text wob;
     public Camera mainMenuCam;
     public bool upgrading;
+    public bool day;
     public GameObject continueButton;
 
     public enum Menus {main,pause,upgrade,ingame,none,difficulty,end}
@@ -64,9 +66,16 @@ public class MenuManager : MonoBehaviour {
             upgradeMenu.Dead();
             AIManager.wantedState = false;
         }
-        if (endDay == true)
+        if (endDay == true && InterfaceManager.currentDay != endGame.maxDays)
         {
             upgradeMenu.EndDay();
+        }
+        else if(InterfaceManager.currentDay == endGame.maxDays && endDay == true && day == false)
+        {
+            endGame.endgame();
+            menus = Menus.end;
+            day = true;
+            SaveStats.saveClass.moneyOnBank = SaveStats.saveClass.moneyOnPerson;
         }
         if(upgradeMenu.endDAY == true)
         {

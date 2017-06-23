@@ -12,12 +12,26 @@
   <inventorySpace>3</inventorySpace>
   <wanted>false</wanted>
   <charPos>
-    <x>-10.5151558</x>
-    <y>0.4345141</y>
-    <z>-21.503912</z>
+    <x>9.659354</x>
+    <y>0.499486685</y>
+    <z>-19.9140244</z>
   </charPos>
   <currentDay>1</currentDay>
   <test>
+    <int>0</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
+    <int>1</int>
     <int>0</int>
     <int>1</int>
     <int>1</int>
@@ -50,6 +64,7 @@
     <int>1</int>
     <int>1</int>
     <int>1</int>
+    <int>0</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
@@ -57,22 +72,7 @@
     <int>1</int>
     <int>1</int>
     <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
-    <int>1</int>
+    <int>0</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
@@ -83,7 +83,7 @@
   <moneyOnBank>0</moneyOnBank>
   <totalMoney>0</totalMoney>
   <maxInInventory>3</maxInInventory>
-  <inInventory>0</inInventory>
-  <difficulty>1</difficulty>
+  <inInventory>3</inInventory>
+  <difficulty>0</difficulty>
   <EverPlayedOnThisPc>true</EverPlayedOnThisPc>
 </SaveClass>
