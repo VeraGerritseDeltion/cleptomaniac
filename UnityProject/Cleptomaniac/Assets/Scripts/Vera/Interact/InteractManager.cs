@@ -39,7 +39,11 @@ public class InteractManager : MonoBehaviour {
             
             if (interactable.interacting == false)
             {
-                e.enabled = true;
+                if(targetHit.collider.tag != "Gem")
+                {
+                    e.enabled = true;
+                }
+                
                
                 if (Input.GetButtonDown("Interact")){
                     interactable.Interacting();
