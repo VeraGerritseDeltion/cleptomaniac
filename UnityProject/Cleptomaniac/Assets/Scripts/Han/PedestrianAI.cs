@@ -81,7 +81,7 @@ public class PedestrianAI : MonoBehaviour{
         }
     }
 
-    void OnColisionEnter(Collision c) {
+    void OnCollisionEnter(Collision c) {
 
         if(c.collider.tag == aiTag) {
             currentCheckPoint++;
