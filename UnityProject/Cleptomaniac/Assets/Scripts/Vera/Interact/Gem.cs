@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Gem : Interactable{
     public GameObject gem;
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    public Animator yass;
+
     public override void Interacting()
     {
+        yass.enabled = false;
         gem.AddComponent<Rigidbody>();
     }
 }

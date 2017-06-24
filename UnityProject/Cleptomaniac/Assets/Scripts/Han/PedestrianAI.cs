@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PedestrianAI : MonoBehaviour {
+public class PedestrianAI : MonoBehaviour{
     public Transform player;
     public Transform myTransform;
     public NavMeshAgent navigator;
@@ -77,6 +77,16 @@ public class PedestrianAI : MonoBehaviour {
                 if(Physics.Raycast(transform.position,lookDirection.forward,out rayHit2,8) && rayHit2.collider.tag == "Player") {
                     AIManager.wantedState = true;
                 }
+            }
+        }
+    }
+
+    void OnColisionEnter(Collision c) {
+
+        if(c.collider.tag == aiTag) {
+            currentCheckPoint++;
+            if(currentCheckPoint == checkPoints.Count - 1){
+                currentCheckPoint = 0;
             }
         }
     }

@@ -23,10 +23,7 @@ public class SecurityAI : MonoBehaviour{
     public static GameObject donut;
     public float runningSpeed;
     public float walkingSpeed;
-
-    void Start() {
-
-    }
+    public Transform startingPosition;
 
     void Update() {
         if(aim.looking == true) {
@@ -49,9 +46,12 @@ public class SecurityAI : MonoBehaviour{
                         currentCheckPoint++;
                     }
                 }
-
             }
             else {
+                transform.rotation = startingPosition.rotation;
+                transform.position = startingPosition.position;
+                securityAnimator.SetBool("Walking",false);
+                securityAnimator.SetBool("Wanted",false);
                 if(Random.Range(1,100) == 2) {
                     securityAnimator.SetBool("Tip That Hat",true);
                     securityAnimator.SetBool("Tip That Hat",false);
