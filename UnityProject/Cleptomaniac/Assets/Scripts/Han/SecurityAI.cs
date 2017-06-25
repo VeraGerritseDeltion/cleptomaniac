@@ -96,6 +96,7 @@ public class SecurityAI : MonoBehaviour{
         if(AIManager.wantedState == true && collision.collider.tag == "Player") {
             MenuManager.dead = true;
             securityAnimator.SetBool("Wanted",false);
+            aim.looking = false;
         }
     }
 

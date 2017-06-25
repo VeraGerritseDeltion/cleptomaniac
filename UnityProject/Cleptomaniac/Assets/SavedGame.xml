@@ -12,13 +12,14 @@
   <inventorySpace>3</inventorySpace>
   <wanted>false</wanted>
   <charPos>
-    <x>8.755952</x>
-    <y>0.4899994</y>
-    <z>2.81671476</z>
+    <x>-17.02</x>
+    <y>0.85771805</y>
+    <z>-18.939</z>
   </charPos>
-  <currentDay>1</currentDay>
+  <currentDay>5</currentDay>
   <test>
     <int>0</int>
+    <int>1</int>
     <int>1</int>
     <int>1</int>
     <int>1</int>
@@ -128,7 +129,7 @@
   </test>
   <moneyOnPerson>0</moneyOnPerson>
   <moneyOnBank>0</moneyOnBank>
-  <totalMoney>0</totalMoney>
+  <totalMoney>595</totalMoney>
   <maxInInventory>3</maxInInventory>
   <inInventory>0</inInventory>
   <difficulty>0</difficulty>

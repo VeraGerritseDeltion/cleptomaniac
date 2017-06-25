@@ -49,7 +49,6 @@ public class OpenVault : Interactable {
             padLock.enabled = false;
             MenuManager.inGameStaticInterface = false;
             doorOpend = true;
-            MenuManager.inGameStaticInterface = false;
         }
         else
         {
@@ -57,4 +56,10 @@ public class OpenVault : Interactable {
         }
             
        }
+    public void NewDay()
+    {
+        vault.SetBool("OpenDoor", false);
+        code = Random.Range(1000, 9999);
+        pcCode.text = code.ToString();
+    }
 }

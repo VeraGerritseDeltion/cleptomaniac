@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviour {
     public InterfaceManager interfaceM;
     public Movement movement;
     public EndGame endGame;
+    public OpenVault openVault;
 
     public Text wop;
     public Text wob;
@@ -44,6 +45,7 @@ public class MenuManager : MonoBehaviour {
 	}
 	
 	void Update () {
+        print(AIManager.wantedState);
         if (SaveStats.saveClass != null)
         {
             wop.text = SaveStats.saveClass.moneyOnPerson.ToString();
@@ -63,12 +65,16 @@ public class MenuManager : MonoBehaviour {
         }
         if (dead == true)
         {
+            menus = Menus.upgrade;
             upgradeMenu.Dead();
             AIManager.wantedState = false;
+            openVault.NewDay();
+
         }
         if (endDay == true && InterfaceManager.currentDay != endGame.maxDays)
         {
             upgradeMenu.EndDay();
+            openVault.NewDay();
         }
         else if(InterfaceManager.currentDay == endGame.maxDays && endDay == true && day == false)
         {
@@ -202,6 +208,11 @@ public class MenuManager : MonoBehaviour {
             playedThisSession = true;
             movement.LoadPos();
         }
+    }
+    public void MainMenu()
+    {
+        menus = Menus.main;
+        day = false;
     }
     public void Resume()
     {
