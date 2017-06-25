@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OpenVault : Interactable {
 
@@ -10,11 +11,13 @@ public class OpenVault : Interactable {
     public Canvas padLock;
     public int codeInput;
     public bool doorOpend;
+    public Text pcCode;
 
 
     void Start()
     {
         code = Random.Range(1000, 9999);
+        pcCode.text = code.ToString();
         padLock.enabled = false;
     }
     void Update()

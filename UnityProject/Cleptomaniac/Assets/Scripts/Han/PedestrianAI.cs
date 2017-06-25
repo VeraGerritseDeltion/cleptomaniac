@@ -24,6 +24,7 @@ public class PedestrianAI : MonoBehaviour{
     public int stilStandingTime;
     public bool standStil;
     public Animator characterAnimation;
+    private bool jaNee;
 
     void Start() {
         characterAnimation.SetBool("Walking",true);
@@ -83,11 +84,19 @@ public class PedestrianAI : MonoBehaviour{
 
     void OnCollisionEnter(Collision c) {
 
-        if(c.collider.tag == aiTag) {
+        if(c.collider.tag == aiTag && jaNee == false){
+            jaNee = true;
             currentCheckPoint++;
             if(currentCheckPoint == checkPoints.Count - 1){
                 currentCheckPoint = 0;
             }
+            navigator.SetDestination(checkPoints[currentCheckPoint].transform.position);
+        }
+    }
+
+    void OnCollisionExit(Collision c){
+        if(c.collider.tag == aiTag && jaNee == true) {
+            jaNee = false;
         }
     }
 }
