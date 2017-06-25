@@ -61,5 +61,6 @@ public class OpenVault : Interactable {
         vault.SetBool("OpenDoor", false);
         code = Random.Range(1000, 9999);
         pcCode.text = code.ToString();
+        interacting = false;
     }
 }

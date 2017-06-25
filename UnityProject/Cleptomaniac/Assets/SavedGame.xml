@@ -16,7 +16,7 @@
     <y>0.85771805</y>
     <z>-18.939</z>
   </charPos>
-  <currentDay>5</currentDay>
+  <currentDay>2</currentDay>
   <test>
     <int>0</int>
     <int>1</int>
@@ -129,7 +129,7 @@
   </test>
   <moneyOnPerson>0</moneyOnPerson>
   <moneyOnBank>0</moneyOnBank>
-  <totalMoney>595</totalMoney>
+  <totalMoney>0</totalMoney>
   <maxInInventory>3</maxInInventory>
   <inInventory>0</inInventory>
   <difficulty>0</difficulty>

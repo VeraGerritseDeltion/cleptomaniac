@@ -69,7 +69,6 @@ public class UpgradeMenu : MonoBehaviour {
         AIManager.wantedState = false;
         speedTierText.text = "Speed Tier: " + speedTier.ToString();
         donutText.text = "Donut Amount: " + donutAmount.ToString();
-        keysText.text = "Keys Amount: " + keysAmount.ToString();
         invCapTierText.text = "Inventory Size Tier: " + invCapTier.ToString();
         jumpTierText.text = "Jump Height Tier : " + jumpTier.ToString();
         enduranceTierText.text = "Endurance Tier:" + enduranceTier.ToString();
@@ -279,7 +278,6 @@ public void NextDay()
         SaveStats.saveClass.jumpTiers = jumpTier;
         SaveStats.saveClass.enduranceTiers = enduranceTier;
         SaveStats.saveClass.invCapTiers = invCapTier;
-        SaveStats.saveClass.keysAmounts = keysAmount;
         SaveStats.saveClass.donutAmounts = donutAmount;
     }
 
@@ -289,7 +287,6 @@ public void NextDay()
         jumpTier = SaveStats.saveClass.jumpTiers;
         enduranceTier = SaveStats.saveClass.enduranceTiers;
         invCapTier = SaveStats.saveClass.invCapTiers;
-        keysAmount = SaveStats.saveClass.keysAmounts;
         donutAmount = SaveStats.saveClass.donutAmounts;
     }
 

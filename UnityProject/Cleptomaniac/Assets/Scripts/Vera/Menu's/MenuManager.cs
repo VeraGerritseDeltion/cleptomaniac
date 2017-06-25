@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour {
     public Canvas difficultyCanvas;
     public Canvas interfaceCanvas;
     public Canvas endGameCanvas;
+    public Canvas explane;
 
     public SaveManager saveManager;
     public UpgradeMenu upgradeMenu;
@@ -33,7 +34,7 @@ public class MenuManager : MonoBehaviour {
     public bool day;
     public GameObject continueButton;
 
-    public enum Menus {main,pause,upgrade,ingame,none,difficulty,end}
+    public enum Menus {main,pause,upgrade,ingame,none,difficulty,end,explanation}
     public Menus menus;
 
 	void Start () {
@@ -45,11 +46,10 @@ public class MenuManager : MonoBehaviour {
 	}
 	
 	void Update () {
-        print(AIManager.wantedState);
         if (SaveStats.saveClass != null)
         {
-            wop.text = SaveStats.saveClass.moneyOnPerson.ToString();
-            wob.text = SaveStats.saveClass.moneyOnBank.ToString();
+            wop.text = "Wallys on person: " + SaveStats.saveClass.moneyOnPerson.ToString();
+            wob.text = "Wallys in bank: " + SaveStats.saveClass.moneyOnBank.ToString();
         }
         if(menus == Menus.main || menus == Menus.upgrade)
         {
@@ -175,6 +175,14 @@ public class MenuManager : MonoBehaviour {
         {
             endGameCanvas.enabled = false;
         }
+        if(menus == Menus.explanation)
+        {
+            explane.enabled = true;
+        }
+        else
+        {
+            explane.enabled = false;
+        }
 
 	}
     public void exitGame()
@@ -213,6 +221,7 @@ public class MenuManager : MonoBehaviour {
     {
         menus = Menus.main;
         day = false;
+        InterfaceManager.currentDay = 1;
     }
     public void Resume()
     {
@@ -241,17 +250,28 @@ public class MenuManager : MonoBehaviour {
     {
         menus = Menus.none;
         EndGame.difficulty = 0;
+        menus = Menus.explanation;
     }
 
     public void Medium()
     {
         menus = Menus.none;
         EndGame.difficulty = 1;
+        menus = Menus.explanation;
     }
 
     public void Hard()
     {
         menus = Menus.none;
         EndGame.difficulty = 2;
+        menus = Menus.explanation;
+    }
+    public void Cont()
+    {
+        if(playing == false)
+        {
+            menus = Menus.none;
+        }
+        
     }
 }
